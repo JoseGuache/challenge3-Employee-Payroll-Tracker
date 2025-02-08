@@ -41,8 +41,16 @@ console.log(`Average Salary: ${averageSalary.toLocaleString("en-US", { style: "c
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
-  
-}
+  if (employeesArray.length === 0) {
+    console.log("No employees available to select a random employee.");
+    return;
+  }
+
+  const randomIndex = Math.floor(Math.random()* employeesArray.length);
+  const RandomEmployee = employeesArray[randomIndex];
+
+  console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
+};
 
 /*
   ====================
